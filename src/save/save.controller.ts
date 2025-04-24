@@ -3,7 +3,7 @@ import { SaveService } from './save.service';
 import { Save } from 'src/save.entity';
 import { SaveDto } from './dto/save.dto';
 
-@Controller('save')
+@Controller('api/save')
 export class SaveController {
   constructor(private readonly saveService: SaveService) {}
 
