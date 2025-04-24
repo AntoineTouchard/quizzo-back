@@ -15,8 +15,8 @@ import { SaveModule } from './save/save.module';
       useFactory: (configService: ConfigService) => ({
         type: 'mariadb',
         host: configService.get('DATABASE_HOST') ?? 'localhost',
-        port: configService.get('DATABASE_PORT') ?? 3307,
-        username: configService.get('DATABASE_USER') ?? 'root',
+        port: configService.get('DATABASE_PORT') ?? 3306,
+        username: configService.get('DATABASE_USER') ?? 'bingo',
         password: configService.get('DATABASE_PASS') ?? '',
         database: configService.get('DATABASE_NAME') ?? 'bingo',
         synchronize: configService.get('DATABASE_SYNC') ?? false,
