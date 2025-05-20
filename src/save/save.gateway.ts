@@ -34,6 +34,9 @@ export class SaveGateway implements OnGatewayInit, OnGatewayConnection, OnGatewa
       message: 'Connected to the websocket',
       connectedUsers: this.connectedUsers,
     })
+    this.server.emit('users-updated', {
+      connectedUsers: this.connectedUsers,
+    })
   }
 
   handleDisconnect(@ConnectedSocket() client: Socket) {
