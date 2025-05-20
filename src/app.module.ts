@@ -1,10 +1,10 @@
-import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { TypeOrmModule } from '@nestjs/typeorm';
-import { ConfigModule, ConfigService } from '@nestjs/config';
-import { Save } from './save.entity';
-import { SaveModule } from './save/save.module';
+import { Module } from '@nestjs/common'
+import { AppController } from './app.controller'
+import { AppService } from './app.service'
+import { TypeOrmModule } from '@nestjs/typeorm'
+import { ConfigModule, ConfigService } from '@nestjs/config'
+import { Save } from './save.entity'
+import { SaveModule } from './save/save.module'
 
 @Module({
   imports: [
@@ -14,11 +14,11 @@ import { SaveModule } from './save/save.module';
       inject: [ConfigService],
       useFactory: (configService: ConfigService) => ({
         type: 'mariadb',
-        host: configService.get('DATABASE_HOST') ?? 'localhost',
+        host: configService.get('DATABASE_HOST') ?? 'db4free.net',
         port: configService.get('DATABASE_PORT') ?? 3306,
-        username: configService.get('DATABASE_USER') ?? 'bingo',
-        password: configService.get('DATABASE_PASS') ?? '',
-        database: configService.get('DATABASE_NAME') ?? 'bingo',
+        username: configService.get('DATABASE_USER') ?? 'bingoany',
+        password: configService.get('DATABASE_PASS') ?? 'bingoany',
+        database: configService.get('DATABASE_NAME') ?? 'bingoany',
         synchronize: configService.get('DATABASE_SYNC') ?? false,
         charset: 'utf8mb4',
         logging: ['error'],
