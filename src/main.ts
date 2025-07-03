@@ -13,7 +13,6 @@ async function bootstrap() {
       'Content-Type',
       'Authorization',
       'Accept',
-      'X-Anonymous-Token',
       'User-Agent',
     ],
     credentials: true,
